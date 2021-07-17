@@ -13,7 +13,7 @@ async def starter(event):
     await event.reply(
         f"Hi {user.first_name}\nI can encode Telegram files in x265, just send me a video.",
         buttons=[
-            Button.url("Channel", url="https://t.me/BotzHub"),
+            Button.url("Channel", url="https://t.me/kangothersc"),
             Button.url("Source", url="https://github.com/xditya/video-encoder-bot"),
         ],
     )
