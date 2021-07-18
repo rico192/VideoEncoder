@@ -50,7 +50,7 @@ def encode(filepath):
             video_opts = "-c:v copy -tag:v hvc1"
     else:
         # Transcode to h265 / hvc1
-        video_opts = "-c:v libx265 -crf 28 -tag:v hvc1 -preset fast -threads 8"
+        video_opts = "-c:v libx265 -crf 32 -tag:v hvc1 -preset faster -threads $(nproc --all)"
     # Get the audio channel codec
     audio_codec = get_codec(filepath, channel="a:0")
     if audio_codec == []:
@@ -58,7 +58,7 @@ def encode(filepath):
     elif audio_codec[0] == "aac":
         audio_opts = "-c:a copy"
     else:
-        audio_opts = "-c:a aac -b:a 128k"
+        audio_opts = "-c:a aac -b:a 96k"
     call(
         ["ffmpeg", "-i", filepath]
         + video_opts.split()
