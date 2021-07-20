@@ -11,7 +11,7 @@ async def starter(event):
     if not await check_user(event.sender_id):
         await add_user(event.sender_id)
     await event.reply(
-        f"Hi {user.first_name}\nI can encode Telegram files in x265, just send me a video.",
+        f"Hi {user.first_name}\nI can encode Telegram files in x265 (60 fps), just send me a video.",
         buttons=[
             Button.url("Channel", url="https://t.me/kangothersc"),
             Button.url("Source", url="https://github.com/rico192/VideoEncoder/"),
